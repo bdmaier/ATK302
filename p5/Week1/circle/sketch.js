@@ -5,6 +5,6 @@ function setup() {
 
 function draw() {
   // put drawing code here
-fill(150, 0, 0)
+fill(0, 0, 255)
   rect(mouseX, mouseY, 100, 100) ;
 }
