@@ -105,7 +105,7 @@ ellipse(518, 152, 12, 12);
 
  fill(0);
  textSize(30);
-  text(mouseX + ", " + mouseY, 50, 50);
+  text(mouseX + ", " + mouseY, mouseX + 10, mouseY + 10);
 
  // fill(204);
  // triangle(18, 18, 18, 360, 81, 360);
