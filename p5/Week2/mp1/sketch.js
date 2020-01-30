@@ -1,10 +1,12 @@
 var harry;
+var reg;
 
 function setup() {
   // put setup code here
 createCanvas(1000, 800);
 rectMode(CENTER);
 harry = loadFont('assets/HarryFont.ttf');
+reg = loadFont('assets/AppleGaramond.ttf');
 }
 
 function draw() {
@@ -23,7 +25,7 @@ text("There was once a boy named Stewart Crumbsworth. One day, he accidently", 7
  text("ate a bowl of radioactive chicken noodle soup while reciting digits of pi to himself.", 50, 80);
  text(" He gained superhuman strength, speed, and intelligence and now protects", 70, 110);
  text("Mathtropolis as the caped superhero, Pi-Man.", 198, 140);
-
+textFont(reg);
   //stuff tat we always want to show
   if (mouseIsPressed) {
     //stuff that shows when the mouse is pressed
