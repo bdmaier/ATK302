@@ -12,7 +12,7 @@ chicken3 = loadImage("assets/chicken3.jpg");
 
 function draw() {
   image(chicken, 0, 0, 200, 200);
-  image(chicken2, 0, 200, 600, 200);
+  image(chicken2, 0, 200, 200, 200);
   image(chicken3, 0, 400, 200, 200);
     // put drawing code here
 }
