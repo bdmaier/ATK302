@@ -1,5 +1,8 @@
 var myState = 0;
 var timer = 0;
+function preload(){
+  
+}
 function setup() {
   // put setup code here\
   createCanvas(800, 800);
@@ -12,11 +15,11 @@ switch(myState){
   background('red');
   textSize(28);
   text("Hello, welcome to my story. Here's where we begin...", 100, 250);
-  timer++; //=timer= timer + 1;
-  if (timer > 300){
-    myState = 1;
-    timer = 0;
-  }
+  //timer++; //=timer= timer + 1;
+  //if (timer > 300){
+  //  myState = 1;
+  //  timer = 0;
+  //}
 
 
   break;
