@@ -1,30 +1,42 @@
 var myState = 0;
 var timer = 0;
-function preload(){
-  
-}
+var playing = false;
+var button;
+var vid;
+var vidLoad;
 function setup() {
-  // put setup code here\
   createCanvas(800, 800);
+  // put setup code here\
+  vid = createVideo(
+    ['assets/video3.mp4'],
+    vidLoad
+  );
+
+  button = createButton('play');
+  button.mousePressed(toggleVid); // attach button listener
+   centerButton();
 }
 
 function draw() {
   // put drawing code here
+
 switch(myState){
   case 0:
+  vid.hide();
+  button.hide();
   background('red');
   textSize(28);
   text("Hello, welcome to my story. Here's where we begin...", 100, 250);
   //timer++; //=timer= timer + 1;
   //if (timer > 300){
   //  myState = 1;
-  //  timer = 0;
+  // timer = 0;
   //}
-
 
   break;
 
   case 1:
+
   background('green');
   textSize(28);
   text("There was once a boy named Ben.", 100, 250);
@@ -59,14 +71,30 @@ switch(myState){
   break;
 
   case 4:
-  background('yellow');
-  textSize(28);
-  text("The end.", 100, 250);
+noCanvas();
+vid.show();
+button.show();
+  function vidLoad() {
+    vid.loop();
+    vid.volume(0);
+  }
+  text("Push play to play the video", 400, 600);
+  vid.size(800, 550);
   timer++; //=timer= timer + 1;
-  if (timer > 300){
+  if (timer > 1000){
     myState = 0;
     timer = 0;
   }
+
+
+  //background('yellow');
+//  textSize(28);
+  //text("The end.", 100, 250);
+
+//  timer++; //=timer= timer + 1;
+//  if (timer > 300){
+  //  myState = 0;
+    //timer = 0;
   break;
 
 }
@@ -78,5 +106,25 @@ function mouseReleased(){
   if (myState > 4){
     myState = 0;
   }
+
 }
+}
+function toggleVid() {
+
+if (playing) {
+  vid.pause();
+  button.html('play');
+} else {
+  vid.loop();
+  button.html('pause');
+}
+
+playing = !playing;
+}
+var cnv;
+
+function centerButton() {
+  var x = 390;
+  var y = 505;
+  button.position(x, y);
 }
