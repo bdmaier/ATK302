@@ -1,6 +1,7 @@
 var font1 ;
  function preload() {
-   font1 = loadFont("assets/coolfont1.ttf")
+   font1 = loadFont("assets/coolfont1.ttf");
+   font2 = loadFont("assets/coolfont3.ttf");
  }
 var myState = 0;
 var timer = 0;
@@ -44,8 +45,7 @@ textFont(font1, 34);
   text("Once upon a time there was a boy named Ben. He was a great", 12, 60);
   text("actor and even got to walk on down that red carpet a couple", 25, 90);
   text("of times.", 350, 120);
-  textSize(46);
-  text("Click the screen to continue", 150, 595);
+
   fill('red');
   rect(400, 700, 800, 200);
 
@@ -94,19 +94,22 @@ fill(0);
   pop();
   w += 2 ; //or x = x + 5//
   if (w > width ){
-  w = -500 ;
+  w = -400 ;
   }
   //timer++; //=timer= timer + 1;
   //if (timer > 300){
   //  myState = 1;
   // timer = 0;
   //}
-
+  fill('black');
+  textFont(font2, 44);
+    text("Click in the canvas to continue", 110, 595);
   break;
 
   case 1:
 background('lightblue');
 fill('black');
+textFont(font1, 34);
 text("But he was sad though. He was not satisfied with the ", 60, 60);
 text("fame and fortune.", 275, 90);
 
@@ -161,11 +164,14 @@ pop();
     myState = 2;
     timer = 0;
 }
+textFont(font2, 44);
+fill('black');
+text("Timer will advance you to the next state.", 10, 720);
   break;
 
   case 2:
   background('yellow');
-  textSize(44);
+  textFont(font1, 44);
   fill('black');
   text("One day he ate some radioactive waffle fries", 45, 100);
   text("and he gained incredible powers.", 130, 130);
@@ -175,13 +181,15 @@ pop();
     myState = 3;
     timer = 0;
   }
+textFont(font2, 44);
+  text("Timer will advance you to the next state.", 10, 720);
   break;
 
 
   case 3:
   background('lightblue');
   fill('black');
-  textSize(34);
+  textFont(font1, 34);
   text("He became the great Benji-Man,", 14, 200);
   text("protecting the citizens of Blono.", 8, 230);
   text("He hands out waffle fries to des-", 1, 260);
@@ -265,6 +273,9 @@ pop();
     myState = 4;
     timer = 0;
   }
+  textFont(font2, 44);
+  fill('black');
+  text("Timer will advance you to the next state.", 10, 720);
   break;
   case 4:
 background('lightblue');
@@ -335,7 +346,7 @@ translate(90, 0);
     line(336, 132, 314, 140);
     pop();
   fill('black');
-  textSize(34);
+  textFont(font1, 34);
   text("Yet the superhero life was", 15, 170);
   text("also not satisfactory enough", 10, 200);
   text("for Ben...he was lonely. So", 10, 230);
@@ -348,6 +359,9 @@ translate(90, 0);
     myState = 5;
     timer = 0;
   }
+textFont(font2, 44);
+  fill('black');
+  text("Timer will advance you to the next state.", 10, 720);
 break;
   case 5:
 //Video inserted with the help of the below website pages:
