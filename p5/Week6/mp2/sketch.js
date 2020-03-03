@@ -118,7 +118,7 @@ text("fame and fortune.", 275, 90);
   rect(400, 700, 800, 200);
   textSize(34);
 push();
-translate(-85, 0);
+translate(-85, -20);
   fill('yellow');
   rect(500, 370, 160, 200);
   noStroke();
@@ -166,7 +166,7 @@ pop();
 }
 textFont(font2, 44);
 fill('black');
-text("Timer will advance you to the next state.", 10, 720);
+text("Timer will advance you to the next state.", 10, 712);
   break;
 
   case 2:
@@ -182,7 +182,7 @@ text("Timer will advance you to the next state.", 10, 720);
     timer = 0;
   }
 textFont(font2, 44);
-  text("Timer will advance you to the next state.", 10, 720);
+  text("Timer will advance you to the next state.", 10, 712);
   break;
 
 
@@ -275,14 +275,14 @@ textFont(font2, 44);
   }
   textFont(font2, 44);
   fill('black');
-  text("Timer will advance you to the next state.", 10, 720);
+  text("Timer will advance you to the next state.", 10, 712);
   break;
   case 4:
 background('lightblue');
 fill('#2F9308');
 rect(400, 700, 800, 200);
 push();
-translate(90, 0);
+translate(90, -20);
   fill(0);
   quad(420, 270, 580, 270, 630, 610, 370, 610);
       fill(255, 0, 0);
@@ -350,7 +350,7 @@ translate(90, 0);
   text("Yet the superhero life was", 15, 170);
   text("also not satisfactory enough", 10, 200);
   text("for Ben...he was lonely. So", 10, 230);
-  text("he set out to make more of", 10, 260);
+  text("he set out to make clones of", 10, 260);
   text("himself, so he wouldn't be so", 10, 290);
   text("lonely. And this is what he", 19, 320);
   text("ended up with...", 76, 350);
@@ -361,7 +361,7 @@ translate(90, 0);
   }
 textFont(font2, 44);
   fill('black');
-  text("Timer will advance you to the next state.", 10, 720);
+  text("Timer will advance you to the next state.", 10, 712);
 break;
   case 5:
 //Video inserted with the help of the below website pages:
