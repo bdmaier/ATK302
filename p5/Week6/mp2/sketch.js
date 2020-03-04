@@ -192,10 +192,10 @@ textFont(font2, 44);
   textFont(font1, 34);
   text("He became the great Benji-Man,", 14, 200);
   text("protecting the citizens of Blono.", 8, 230);
-  text("He hands out waffle fries to des-", 1, 260);
-  text("erving children, kind of like Santa", 1, 290);
-  text("Claus and how he delivers", 35, 320);
-  text("presents to them.", 90, 350);
+  text("He hands out hot and ready-to-eat", 1, 260);
+  text("waffle fries to people on the", 22, 290);
+  text("streets below.", 115, 320);
+
 
   fill('#2F9308');
   rect(400, 700, 800, 200);
@@ -269,7 +269,7 @@ textFont(font2, 44);
   j = 1000 ;
   }
   timer++; //=timer= timer + 1;
-  if (timer > 650){
+  if (timer > 420){
     myState = 4;
     timer = 0;
   }
@@ -355,7 +355,7 @@ translate(90, -20);
   text("lonely. And this is what he", 19, 320);
   text("ended up with...", 76, 350);
   timer++; //=timer= timer + 1;
-  if (timer > 600){
+  if (timer > 480){
     myState = 5;
     timer = 0;
   }
