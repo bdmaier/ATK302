@@ -355,7 +355,7 @@ translate(90, -20);
   text("lonely. And this is what he", 19, 320);
   text("ended up with...", 76, 350);
   timer++; //=timer= timer + 1;
-  if (timer > 700){
+  if (timer > 600){
     myState = 5;
     timer = 0;
   }
