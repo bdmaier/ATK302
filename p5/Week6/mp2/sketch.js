@@ -192,7 +192,7 @@ textFont(font2, 44);
   textFont(font1, 34);
   text("He became the great Benji-Man,", 14, 200);
   text("protecting the citizens of Blono.", 8, 230);
-  text("He hands out hot and ready-to-eat", 1, 260);
+  text("He handed out hot and ready-to-eat", 1, 260);
   text("waffle fries to people on the", 22, 290);
   text("streets below.", 115, 320);
 
@@ -269,7 +269,7 @@ textFont(font2, 44);
   j = 1000 ;
   }
   timer++; //=timer= timer + 1;
-  if (timer > 420){
+  if (timer > 440){
     myState = 4;
     timer = 0;
   }
