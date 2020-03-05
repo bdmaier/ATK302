@@ -5,7 +5,7 @@ function setup() {
   noCanvas();
 
   vid = createVideo(
-    ['assets/video3.mp4'],
+    ['assets/video3.mp4', 'assets/video3.mov', 'assets/video3.webm'],
     vidLoad
   );
 
