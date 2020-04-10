@@ -9,7 +9,7 @@ var maxTimer = 25 * 60;
 var timer = maxTimer;
 var time = 10 * 60;
 var level = 1;
-var lastLevel = 2;
+var lastLevel = 4;
 var avatar;
 var chicken;
 var face;
@@ -40,7 +40,7 @@ function setup() {
   face = loadImage("assets/face2.jpg");
   me = loadImage("assets/me2.jpg");
   seven = loadImage("assets/seven.jpg");
-  avatar = loadImage("assets/avatar.png");
+  avatar = loadImage("assets/avatar2.png");
   chicken = loadImage("assets/chicken.jpeg");
   vacuum = loadImage("assets/vacuum.png");
   textAlign(CENTER);
@@ -223,7 +223,7 @@ function game() {
   //fill('red');
   //ellipse(frogPos.x, frogPos.y, 50, 50);
 
-  image(vacuum, frogPos.x, frogPos.y, 90, 100);
+  image(vacuum, frogPos.x, frogPos.y, 100, 110);
   checkForKeys();
 }
 
@@ -246,7 +246,7 @@ function Car() {
   this.r = random(255);
   this.g = random(255);
   this.b = random(255);
-  this.w = random(15, 75);
+  this.w = random(30, 105);
   //methods
   this.display = function() {
     //fill(this.r, this.g, this.b);
