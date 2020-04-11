@@ -7,7 +7,7 @@ var maxCars = 5;
 var numCars = 5;
 var maxTimer = 25 * 60;
 var timer = maxTimer;
-var time = 10 * 60;
+var time = 25 * 60;
 var level = 1;
 var lastLevel = 4;
 var avatar;
