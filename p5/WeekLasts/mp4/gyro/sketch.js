@@ -63,9 +63,9 @@ function draw() {
   text("z = " + z.toFixed(4), 25, 190);
 
   // MORE DECORATIONS - write that pretty ATK type on top.
-  fill('white');
+  fill('red');
   noStroke();
-  textSize(275);
+  textSize(85);
   textAlign(CENTER);
   text("Ben Maier, CTK 302", width / 2, height / 2);
 
