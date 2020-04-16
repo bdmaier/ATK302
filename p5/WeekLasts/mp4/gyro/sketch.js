@@ -63,7 +63,7 @@ function draw() {
   text("z = " + z.toFixed(4), 25, 190);
 
   // MORE DECORATIONS - write that pretty ATK type on top.
-  fill('yellow');
+  fill('green');
   noStroke();
   textSize(85);
   textAlign(CENTER);
