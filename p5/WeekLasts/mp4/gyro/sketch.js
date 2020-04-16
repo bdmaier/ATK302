@@ -38,7 +38,7 @@ function draw() {
 
   translate(xPosition, yPosition); // move everything over by x, y
 
-  rotate(radians(alpha + PI/2)); // using alpha in here so it doesn't feel bad
+  rotate(radians(alpha - 1.5708)); // using alpha in here so it doesn't feel bad
 
   image(avatarImage, 0, 0, 500, 500);
   //  	rect(0, 0, 100, 100) ;
