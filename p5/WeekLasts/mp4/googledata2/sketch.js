@@ -3,7 +3,7 @@ var namesArray = [];
 function setup() {
 
   // Tabletop stuff, for getting google spreadsheet data in.
-  let url = '1piCrfM4I2BW-5qDXccWNqDLk_4RKDfW7YFYa00aRH7Y'; // this is KEY of the URL from the sheet
+  let url = '1eIYRlFIqTbdOi3DY0YuXtqHEg8WiVr3i4aKUeCjREvI'; // this is KEY of the URL from the sheet
   let settings = {
     key: url, // The url of the published google sheet
     callback: gotData, // A callback for when the data comes in
@@ -12,13 +12,17 @@ function setup() {
 
   Tabletop.init(settings); // Grab the data from the spreadsheet!
   // End Tabletop initialization stuff
-
+  sausage = loadImage("assets/sausage.png");
+  cheese = loadImage("assets/cheese.png");
+  pepperoni = loadImage("assets/pepperoni.png");
+  bacon = loadImage("assets/bacon.png");
 
   // Regular setup code we usually have
   createCanvas(600, 600);
   textAlign(CENTER);
   ellipseMode(CENTER);
   rectMode(CENTER);
+  imageMode(CENTER);
 
 }
 
@@ -30,7 +34,7 @@ function gotData(data) {
 
   // iterate through the array of data and create an object and push it on an array called namesArray
   for (let i = 0; i < data.length; i++) {
-    namesArray.push(new Circle(data[i].Name, data[i].Pill));
+    namesArray.push(new Circle(data[i].Name, data[i].Topping));
   }
 
 }
@@ -48,10 +52,10 @@ function draw() {
 
 
 // my circle class
-function Circle(myName, myPill) {
+function Circle(myName, myTopping) {
   this.pos = createVector(random(50, 550), random(60, 570));
   this.name = myName;
-  this.pill = myPill;
+  this.topping = myTopping;
   this.r = random(255);
   this.g = random(255);
   this.b = random(255);
@@ -65,20 +69,34 @@ function Circle(myName, myPill) {
 text("My google form survey results:", width/2, 30);
 
 textSize(12);
-    if (myPill == "Red") {
-      fill('red');
-      ellipse(this.pos.x, this.pos.y, 75, 38);
+    if (myTopping == "Cheese") {
+      image(cheese, this.pos.x, this.pos.y, 110, 73);
+      //fill('red');
+      //ellipse(this.pos.x, this.pos.y, 75, 38);
+      fill('white');
+      text(myName, this.pos.x, this.pos.y + 5);
+    }
+    else if(myTopping == "Sausage"){
+        image(sausage, this.pos.x, this.pos.y, 100, 63);
+      //fill('blue');
+      //ellipse(this.pos.x, this.pos.y, 75, 38);
+      fill('white');
+      text(myName, this.pos.x, this.pos.y + 1);
+    }
+    else if(myTopping == "Pepperoni"){
+        image(pepperoni, this.pos.x, this.pos.y, 120, 73);
+      //fill('yellow');
+      //ellipse(this.pos.x, this.pos.y, 75, 38);
+      fill('white');
+      text(myName, this.pos.x, this.pos.y + 7);
+    }
+    else if(myTopping == "Bacon"){
+        image(bacon, this.pos.x, this.pos.y, 100, 63);
+      //fill('orange');
+      //ellipse(this.pos.x, this.pos.y, 75, 38);
       fill('white');
       text(myName, this.pos.x, this.pos.y);
     }
-    else if(myPill == "Blue"){
-      fill('blue');
-      ellipse(this.pos.x, this.pos.y, 75, 38);
-      fill('white');
-      text(myName, this.pos.x, this.pos.y);
-    }
-
-
 
     // put an ellipse here
 

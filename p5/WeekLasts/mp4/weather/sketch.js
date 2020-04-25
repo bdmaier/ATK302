@@ -12,6 +12,7 @@ var sstime;
 function setup() {
   background('lightblue');
   createCanvas(700, 700);
+  ellipseMode(CENTER);
 
   // HERE Is the call to get the weather. PLEASE PUT YOUR OWN ID IN HERE!!!
   // MINE WILL STOP WORKING IF EVERYONE USES IT!!!
@@ -66,24 +67,28 @@ return [
 }
       fill('black');
       background('lightblue');
-      textSize(36);
-      text("Weather in " + weather.name + ", " + weather.sys.country, 30, 40);
+      textSize(38);
+      textAlign(CENTER);
+      text("How does the weather look today?!?", 350, 40);
+      textSize(30);
+      text("Weather in " + weather.name + ", " + weather.sys.country, 350, 80);
       textSize(20);
-      text("The temperature is currently " + weather.main.temp + "° Fahrenheit, with a high of \n" + weather.main.temp_max + "° and a low of " + weather.main.temp_min + "°.", 30, 90);
-      text("It currently FEELS like " + weather.main.feels_like + "° Fahrenheit though.", 30, 140);
-      text("The humidity level is " + weather.main.humidity + "%.", 30, 170);
-      text("The wind speed is " + weather.wind.speed + "mph, with gusts of up to " + weather.wind.gust + "mph.", 30, 200);
-      text("Sunrise time: " + convertTime(srtime) + ".", 30, 230);
-      text("Sunset time: " + convertTime2(sstime) + ".", 30, 260);
-      text("Weather is: " + weather.weather[0].description, 30, 290);
-      text("Coordinates of " + weather.name + ": " + weather.coord.lon + ", " + weather.coord.lat, 30, 320);
-      text("ID of " + weather.name + ": " + weather.sys.id, 30, 350);
+      textAlign(LEFT);
+      text("The temperature is currently " + weather.main.temp + "° Fahrenheit, with a high of \n" + weather.main.temp_max + "° and a low of " + weather.main.temp_min + "°.", 30, 250);
+      text("It currently FEELS like " + weather.main.feels_like + "° Fahrenheit though.", 30, 300);
+      text("The humidity level is " + weather.main.humidity + "%.", 30, 330);
+      text("The wind speed is " + weather.wind.speed + "mph, with gusts of up to " + weather.wind.gust + "mph.", 30, 360);
+      text("Sunrise time: " + convertTime(srtime) + ".", 30, 390);
+      text("Sunset time: " + convertTime2(sstime) + ".", 30, 420);
+      text("Weather is: " + weather.weather[0].description, 30, 450);
+      text("Coordinates of " + weather.name + ": " + weather.coord.lon + ", " + weather.coord.lat, 30, 480);
+      text("ID of " + weather.name + ": " + weather.sys.id, 30, 510);
       fill('white');
       noStroke();
-      ellipse(x, 400, 100, 50);
-      ellipse(x + 32, 420, 100, 50);
-      ellipse(x - 32, 420, 100, 50);
-      ellipse(x, 440, 100, 50);
+      ellipse(x, 140, 100, 50);
+      ellipse(x + 32, 160, 100, 50);
+      ellipse(x - 32, 160, 100, 50);
+      ellipse(x, 180, 100, 50);
 
 
       x = x + ws / 4;
@@ -97,13 +102,15 @@ return [
         fill('blue');
         var tmp = 0;
         tmp = map(temperature, -20, 100, 2, height - 80);
-        rect(width - 40, height - 10, 30, -tmp);
+        rect(width - 50, height - 10, 30, -tmp);
+        ellipse(width-35, 670, 60, 60);
 
       } else if (temperature >= 50) {
         fill('red');
         var tmp = 0;
         tmp = map(temperature, -20, 100, 2, height - 80);
-        rect(width - 40, height - 10, 30, -tmp);
+        rect(width - 50, height - 10, 30, -tmp);
+        ellipse(width-35, 670, 60, 60);
 
 
         //var s = new Date(sstime).toLocaleTimeString("en-US")
