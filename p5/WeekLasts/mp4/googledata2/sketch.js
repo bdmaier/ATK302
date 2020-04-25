@@ -74,21 +74,21 @@ textSize(12);
       //fill('red');
       //ellipse(this.pos.x, this.pos.y, 75, 38);
       fill('white');
-      text(myName, this.pos.x, this.pos.y + 5);
+      text(myName, this.pos.x, this.pos.y + 10);
     }
     else if(myTopping == "Sausage"){
         image(sausage, this.pos.x, this.pos.y, 100, 63);
       //fill('blue');
       //ellipse(this.pos.x, this.pos.y, 75, 38);
       fill('white');
-      text(myName, this.pos.x, this.pos.y + 1);
+      text(myName, this.pos.x, this.pos.y + 4);
     }
     else if(myTopping == "Pepperoni"){
-        image(pepperoni, this.pos.x, this.pos.y, 120, 73);
+        image(pepperoni, this.pos.x, this.pos.y, 124, 73);
       //fill('yellow');
       //ellipse(this.pos.x, this.pos.y, 75, 38);
       fill('white');
-      text(myName, this.pos.x, this.pos.y + 7);
+      text(myName, this.pos.x, this.pos.y + 10);
     }
     else if(myTopping == "Bacon"){
         image(bacon, this.pos.x, this.pos.y, 100, 63);
