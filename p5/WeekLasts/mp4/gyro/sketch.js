@@ -37,7 +37,7 @@ function draw() {
   push(); // before you use translate, rotate, or scale commands, push and then pop after
 
   translate(xPosition, yPosition); // move everything over by x, y
-  rotate(degrees(90));
+  rotate(degrees(80));
   rotate(radians(alpha)); // using alpha in here so it doesn't feel bad
 
   image(avatarImage, 0, 0, 500, 500);
