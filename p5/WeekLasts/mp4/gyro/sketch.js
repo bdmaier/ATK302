@@ -33,15 +33,12 @@ function draw() {
   // map(yourVar, range1_x, range1_y, range2_x, range2_y) ;
   xPosition = map(gamma, -60, 60, 0, width);
   yPosition = map(beta, -30, 30, 0, height-500);
-  push();
-  rotate(degrees(-90));
-  pop();
 
   push(); // before you use translate, rotate, or scale commands, push and then pop after
 
   translate(xPosition, yPosition); // move everything over by x, y
-
-  rotate(radians(alpha - 4*PI/2)); // using alpha in here so it doesn't feel bad
+  rotate(degrees(-90));
+  rotate(radians(alpha)); // using alpha in here so it doesn't feel bad
 
   image(avatarImage, 0, 0, 500, 500);
   //  	rect(0, 0, 100, 100) ;
