@@ -108,7 +108,7 @@ function draw() {
       text("Sunrise time: " + convertTime(srtime) + ".", 30, 390);
       text("Sunset time: " + convertTime2(sstime) + ".", 30, 420);
       text("Weather is: " + weather.weather[0].description, 30, 450);
-      text("The pressure is " + press + "psi.", 30, 480);
+      text("The pressure is " + press.toFixed(2) + "psi.", 30, 480);
       text("Coordinates of " + weather.name + ": " + weather.coord.lon + ", " + weather.coord.lat, 30, 510);
       text("ID of " + weather.name + ": " + weather.sys.id, 30, 540);
       text(formattedDate, 30, 670);
