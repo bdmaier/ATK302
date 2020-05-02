@@ -8,6 +8,7 @@ var temperature = 0;
 var srtime;
 var sstime;
 var ctime;
+var pressure;
 
 
 function setup() {
@@ -33,6 +34,7 @@ function gotData(data) {
   srtime = weather.sys.sunrise;
   sstime = weather.sys.sunset;
   ctime = weather.dt;
+  pressure = weather.main.pressure;
   //weathdes = weather.weather.description;
 
 }
@@ -82,12 +84,12 @@ function draw() {
           pad(date.getSeconds())
         ].join(typeof separator !== 'undefined' ? separator : ':');
       }
-      //Thanks to Ashish Gupta for the code on how to turn my timestamp into a date and 24-hour time format time.
+      //Thanks to Ashish Gupta on stackoverflow.com for the code on how to turn my timestamp into a date and 24-hour time format time.
       var timestamp = ctime; // replace your timestamp
       var date = new Date(timestamp * 1000);
       var formattedDate = ('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2) + '  ' + ('0' + (date.getMonth() + 1)).slice(-2) + '/' + ('0' + date.getDate()).slice(-2) + '/' + date.getFullYear();
       //console.log(formattedDate);
-       //":" + ('0' + date.getSeconds()).slice(-2) + 
+       //":" + ('0' + date.getSeconds()).slice(-2) +
 
       fill('black');
       background('lightblue');
@@ -105,8 +107,9 @@ function draw() {
       text("Sunrise time: " + convertTime(srtime) + ".", 30, 390);
       text("Sunset time: " + convertTime2(sstime) + ".", 30, 420);
       text("Weather is: " + weather.weather[0].description, 30, 450);
-      text("Coordinates of " + weather.name + ": " + weather.coord.lon + ", " + weather.coord.lat, 30, 480);
-      text("ID of " + weather.name + ": " + weather.sys.id, 30, 510);
+      text("The pressure is " + pressure + ".", 30, 480);
+      text("Coordinates of " + weather.name + ": " + weather.coord.lon + ", " + weather.coord.lat, 30, 510);
+      text("ID of " + weather.name + ": " + weather.sys.id, 30, 540);
       text(formattedDate, 30, 670);
       fill('white');
       noStroke();
@@ -116,7 +119,7 @@ function draw() {
       ellipse(x, 180, 100, 50);
 
 
-      x = x + ws / 4;
+      x = x + ws / 5;
       if (x > width) x = -100;
       //fill('red');
       //var tmp = 0;
