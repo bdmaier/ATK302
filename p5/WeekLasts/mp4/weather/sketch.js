@@ -90,6 +90,7 @@ function draw() {
       var formattedDate = ('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2) + '  ' + ('0' + (date.getMonth() + 1)).slice(-2) + '/' + ('0' + date.getDate()).slice(-2) + '/' + date.getFullYear();
       //console.log(formattedDate);
        //":" + ('0' + date.getSeconds()).slice(-2) +
+      var press = pressure/68.948;
 
       fill('black');
       background('lightblue');
@@ -107,7 +108,7 @@ function draw() {
       text("Sunrise time: " + convertTime(srtime) + ".", 30, 390);
       text("Sunset time: " + convertTime2(sstime) + ".", 30, 420);
       text("Weather is: " + weather.weather[0].description, 30, 450);
-      text("The pressure is " + pressure + ".", 30, 480);
+      text("The pressure is " + press + "psi.", 30, 480);
       text("Coordinates of " + weather.name + ": " + weather.coord.lon + ", " + weather.coord.lat, 30, 510);
       text("ID of " + weather.name + ": " + weather.sys.id, 30, 540);
       text(formattedDate, 30, 670);
