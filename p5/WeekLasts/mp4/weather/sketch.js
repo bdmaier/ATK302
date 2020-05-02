@@ -7,6 +7,7 @@ var ws = 0;
 var temperature = 0;
 var srtime;
 var sstime;
+var ctime;
 
 
 function setup() {
@@ -31,6 +32,7 @@ function gotData(data) {
   temperature = weather.main.temp;
   srtime = weather.sys.sunrise;
   sstime = weather.sys.sunset;
+  ctime = weather.dt;
   //weathdes = weather.weather.description;
 
 }
@@ -46,25 +48,47 @@ function draw() {
 
     case 1:
 
-//Thank you to John Slegers on stackoverflow.com for the code on how to convert the timestamps given for sunrise and sunset times from Open Weather to a readable 24-hour format time.
-    var convertTime = function(srtime, separator) {
-    var pad = function(input) {return input < 10 ? "0" + input : input;};
-    var date = srtime ? new Date(srtime * 1000) : new Date();
-    return [
-        pad(date.getHours()),
-        pad(date.getMinutes()),
-        pad(date.getSeconds())
-    ].join(typeof separator !== 'undefined' ?  separator : ':' );
-}
-var convertTime2 = function(sstime, separator) {
-var pad = function(input) {return input < 10 ? "0" + input : input;};
-var date = sstime ? new Date(sstime * 1000) : new Date();
-return [
-    pad(date.getHours()),
-    pad(date.getMinutes()),
-    pad(date.getSeconds())
-].join(typeof separator !== 'undefined' ?  separator : ':' );
-}
+      //Thank you to John Slegers on stackoverflow.com for the code on how to convert the timestamps given for sunrise and sunset times from Open Weather to a readable 24-hour format time.
+      var convertTime = function(srtime, separator) {
+        var pad = function(input) {
+          return input < 10 ? "0" + input : input;
+        };
+        var date = srtime ? new Date(srtime * 1000) : new Date();
+        return [
+          pad(date.getHours()),
+          pad(date.getMinutes()),
+          pad(date.getSeconds())
+        ].join(typeof separator !== 'undefined' ? separator : ':');
+      }
+      var convertTime2 = function(sstime, separator) {
+        var pad = function(input) {
+          return input < 10 ? "0" + input : input;
+        };
+        var date = sstime ? new Date(sstime * 1000) : new Date();
+        return [
+          pad(date.getHours()),
+          pad(date.getMinutes()),
+          pad(date.getSeconds())
+        ].join(typeof separator !== 'undefined' ? separator : ':');
+      }
+      var convertTime3 = function(ctime, separator) {
+        var pad = function(input) {
+          return input < 10 ? "0" + input : input;
+        };
+        var date = ctime ? new Date(ctime * 1000) : new Date();
+        return [
+          pad(date.getHours()),
+          pad(date.getMinutes()),
+          pad(date.getSeconds())
+        ].join(typeof separator !== 'undefined' ? separator : ':');
+      }
+      //Thanks to Ashish Gupta for the code on how to turn my timestamp into a date and 24-hour time format time.
+      var timestamp = ctime; // replace your timestamp
+      var date = new Date(timestamp * 1000);
+      var formattedDate = ('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2) + '  ' + ('0' + (date.getMonth() + 1)).slice(-2) + '/' + ('0' + date.getDate()).slice(-2) + '/' + date.getFullYear();
+      //console.log(formattedDate);
+       //":" + ('0' + date.getSeconds()).slice(-2) + 
+
       fill('black');
       background('lightblue');
       textSize(38);
@@ -83,6 +107,7 @@ return [
       text("Weather is: " + weather.weather[0].description, 30, 450);
       text("Coordinates of " + weather.name + ": " + weather.coord.lon + ", " + weather.coord.lat, 30, 480);
       text("ID of " + weather.name + ": " + weather.sys.id, 30, 510);
+      text(formattedDate, 30, 670);
       fill('white');
       noStroke();
       ellipse(x, 140, 100, 50);
@@ -103,14 +128,14 @@ return [
         var tmp = 0;
         tmp = map(temperature, -20, 100, 2, height - 80);
         rect(width - 50, height - 10, 30, -tmp);
-        ellipse(width-35, 670, 60, 60);
+        ellipse(width - 35, 670, 60, 60);
 
       } else if (temperature >= 50) {
         fill('red');
         var tmp = 0;
         tmp = map(temperature, -20, 100, 2, height - 80);
         rect(width - 50, height - 10, 30, -tmp);
-        ellipse(width-35, 670, 60, 60);
+        ellipse(width - 35, 670, 60, 60);
 
 
         //var s = new Date(sstime).toLocaleTimeString("en-US")
