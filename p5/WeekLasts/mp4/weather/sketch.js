@@ -9,7 +9,8 @@ var srtime;
 var sstime;
 var ctime;
 var pressure;
-
+var link1;
+var winddir;
 
 function setup() {
   background('lightblue');
@@ -22,7 +23,7 @@ function setup() {
   var myJSONString = 'https://api.openweathermap.org/data/2.5/weather?zip=61741,us&units=imperial&';
   var myIDString = 'appid=ef4bcaeffd5ba5f8e0ee7102d8537d7c'; // Take out the x’s and ADD YOUR ID!!! Done
   loadJSON(myJSONString + myIDString, gotData); // look - that gotData function happens when JSON comes back.
-
+  var link1 = createA('https://www.accuweather.com/en/us/forrest/61741/weather-radar/332852', 'Forrest, IL Radar', '_blank');
 }
 
 
@@ -35,6 +36,7 @@ function gotData(data) {
   sstime = weather.sys.sunset;
   ctime = weather.dt;
   pressure = weather.main.pressure;
+  winddir = weather.wind.deg;
   //weathdes = weather.weather.description;
 
 }
@@ -89,8 +91,8 @@ function draw() {
       var date = new Date(timestamp * 1000);
       var formattedDate = ('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2) + '  ' + ('0' + (date.getMonth() + 1)).slice(-2) + '/' + ('0' + date.getDate()).slice(-2) + '/' + date.getFullYear();
       //console.log(formattedDate);
-       //":" + ('0' + date.getSeconds()).slice(-2) +
-      var press = pressure/68.948;
+      //":" + ('0' + date.getSeconds()).slice(-2) +
+      var press = pressure / 68.948;
 
       fill('black');
       background('lightblue');
@@ -111,6 +113,7 @@ function draw() {
       text("The pressure is " + press.toFixed(2) + "psi.", 30, 480);
       text("Coordinates of " + weather.name + ": " + weather.coord.lon + ", " + weather.coord.lat, 30, 510);
       text("ID of " + weather.name + ": " + weather.sys.id, 30, 540);
+      //text('link1', 30, 570);
       text(formattedDate, 30, 670);
       fill('white');
       noStroke();
@@ -118,7 +121,34 @@ function draw() {
       ellipse(x + 32, 160, 100, 50);
       ellipse(x - 32, 160, 100, 50);
       ellipse(x, 180, 100, 50);
-
+      fill('black');
+      if (winddir > 22.5 && winddir < 67.5) {
+        text("Wind From: NE", 30, 570);
+      } else
+      if (winddir >= 0 && winddir <= 22.5) {
+        text("Wind From: N", 30, 570);
+      } else
+      if (winddir >= 67.5 && winddir <= 112.5) {
+        text("Wind From: E", 30, 570);
+      } else
+      if (winddir > 112.5 && winddir < 157.5) {
+        text("Wind From: SE", 30, 570);
+      } else
+      if (winddir >= 157.5 && winddir <= 202.5) {
+        text("Wind From: S", 30, 570);
+      } else
+      if (winddir > 202.5 && winddir < 247.5) {
+        text("Wind From: SW", 30, 570);
+      } else
+      if (winddir >= 247.5 && winddir <= 292.5) {
+        text("Wind From: W", 30, 570);
+      } else
+      if (winddir > 292.5 && winddir < 337.5) {
+        text("Wind From: NW", 30, 570);
+      } else
+      if (winddir >= 337.5 && winddir <= 360) {
+        text("Wind From: N", 30, 570);
+      }
 
       x = x + ws / 5;
       if (x > width) x = -100;
@@ -127,14 +157,14 @@ function draw() {
       //tmp = map(temperature, -20, 100, 2, height - 40);
       //rect(width - 40, height - 10, 30, -tmp);
 
-      if (temperature <= 49) {
+      if (temperature < 60) {
         fill('blue');
         var tmp = 0;
         tmp = map(temperature, -20, 100, 2, height - 80);
         rect(width - 50, height - 10, 30, -tmp);
         ellipse(width - 35, 670, 60, 60);
 
-      } else if (temperature >= 50) {
+      } else if (temperature >= 60) {
         fill('red');
         var tmp = 0;
         tmp = map(temperature, -20, 100, 2, height - 80);
