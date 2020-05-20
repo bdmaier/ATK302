@@ -93,7 +93,10 @@ function draw() {
       //console.log(formattedDate);
       //":" + ('0' + date.getSeconds()).slice(-2) +
       var press = pressure / 68.948;
-
+      var pressmerc = pressure / 33.864;
+      textStyle(BOLD);
+      var textTemp = "Temperature: ";
+      textStyle(NORMAL);
       fill('black');
       background('lightblue');
       textSize(38);
@@ -103,15 +106,16 @@ function draw() {
       text("Weather in " + weather.name + ", " + weather.sys.country, 350, 80);
       textSize(20);
       textAlign(LEFT);
-      text("The temperature is currently " + weather.main.temp + "° Fahrenheit, with a high of \n" + weather.main.temp_max + "° and a low of " + weather.main.temp_min + "°.", 30, 250);
-      text("It currently FEELS like " + weather.main.feels_like + "° Fahrenheit though.", 30, 300);
-      text("The humidity level is " + weather.main.humidity + "%.", 30, 330);
-      text("The wind speed is " + weather.wind.speed + "mph, with gusts of up to " + weather.wind.gust + "mph.", 30, 360);
+
+      text("Temperature: " + weather.main.temp + "°F\nHigh of: " + weather.main.temp_max + "°  Low of: " + weather.main.temp_min + "°.", 30, 250);
+      text("FEELS like: " + weather.main.feels_like + "°F", 30, 300);
+      text("Humidity: " + weather.main.humidity + "%.", 30, 330);
+      text("Wind speed: " + weather.wind.speed + "mph, with gusts of up to " + weather.wind.gust + "mph.", 30, 360);
       text("Sunrise time: " + convertTime(srtime) + ".", 30, 390);
       text("Sunset time: " + convertTime2(sstime) + ".", 30, 420);
-      text("Weather is: " + weather.weather[0].description, 30, 450);
-      text("The pressure is " + press.toFixed(2) + "psi.", 30, 480);
-      text("Coordinates of " + weather.name + ": " + weather.coord.lon + ", " + weather.coord.lat, 30, 510);
+      text("Weather: " + weather.weather[0].description, 30, 450);
+      text("Pressure: " + press.toFixed(2) + "psi/" + pressmerc.toFixed(2) + "inHg/" + pressure + "mb", 30, 480);
+      text("Coordinates of " + weather.name + ": " + weather.coord.lon + " W LONG, " + weather.coord.lat + " N LAT", 30, 510);
       text("ID of " + weather.name + ": " + weather.sys.id, 30, 540);
       //text('link1', 30, 570);
       text(formattedDate, 30, 670);
