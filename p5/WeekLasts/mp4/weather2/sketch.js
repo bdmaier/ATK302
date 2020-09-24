@@ -104,6 +104,7 @@ function draw() {
       var maxTemp = (celMaxTemp-32)/1.8;
       var minTemp = (celMinTemp-32)/1.8;
       var feelsLike = (celFeelsLike-32)/1.8;
+      var pressatm = pressure / 1013.25;
       textStyle(BOLD);
       var textTemp = "Temperature: ";
       textStyle(NORMAL);
@@ -124,7 +125,7 @@ function draw() {
       text("Sunrise time: " + convertTime(srtime) + ".", 30, 390);
       text("Sunset time: " + convertTime2(sstime) + ".", 30, 420);
       text("Weather: " + weather.weather[0].description, 30, 450);
-      text("Pressure: " + press.toFixed(2) + "psi/" + pressmerc.toFixed(2) + "inHg/" + pressure + "mb", 30, 480);
+      text("Pressure: " + press.toFixed(2) + "psi/" + pressmerc.toFixed(2) + "inHg/" + pressure + "mb/" + pressatm.toFixed(4) + "atm", 30, 480);
       text("Visibility: " + visibility.toFixed(2) + "mi", 30, 510);
       text("Coordinates of " + weather.name + ": " + weather.coord.lon + " W LONG, " + weather.coord.lat + " N LAT", 30, 540);
       text("ID of " + weather.name + ": " + weather.sys.id, 30, 570);
