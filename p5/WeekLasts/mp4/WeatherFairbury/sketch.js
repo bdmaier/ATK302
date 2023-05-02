@@ -21,7 +21,7 @@ function setup() {
   // MINE WILL STOP WORKING IF EVERYONE USES IT!!!
 
   var myJSONString = 'https://api.openweathermap.org/data/2.5/weather?zip=61739,us&units=imperial&';
-  var myIDString = 'appid=55c9960e6e504bd3410f0a54afcc1f3d'; // Take out the x’s and ADD YOUR ID!!! Done
+  var myIDString = 'appid=ef4bcaeffd5ba5f8e0ee7102d8537d7c'; // Take out the x’s and ADD YOUR ID!!! Done
   loadJSON(myJSONString + myIDString, gotData); // look - that gotData function happens when JSON comes back.
   var link1 = createA('https://www.accuweather.com/en/us/fairbury/61739/weather-radar/332847', 'Fairbury, IL Radar', '_blank');
 }
