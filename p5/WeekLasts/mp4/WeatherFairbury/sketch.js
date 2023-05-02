@@ -119,7 +119,8 @@ function draw() {
       textAlign(LEFT);
 
       textStyle(BOLD);
-      text("Temperature: ") textStyle(NORMAL); (+ weather.main.temp + "°F("+ sTemp.toFixed(2) + "°C)\n" + "High of: " + weather.main.temp_max + "°F(" + maxTemp.toFixed(2) + "°C)" + "  Low of: " + weather.main.temp_min + "°(" + minTemp.toFixed(2) + "°C)", 30, 250);
+      text("Temperature: ")
+      text(NORMAL+ weather.main.temp + "°F("+ sTemp.toFixed(2) + "°C)\n" + "High of: " + weather.main.temp_max + "°F(" + maxTemp.toFixed(2) + "°C)" + "  Low of: " + weather.main.temp_min + "°(" + minTemp.toFixed(2) + "°C)", 30, 250);
       text("FEELS like: " + weather.main.feels_like + "°F(" + feelsLike.toFixed(2) + "°C)", 30, 300);
       text("Humidity: " + weather.main.humidity + "%.", 30, 330);
       text("Wind speed: " + weather.wind.speed + "mph, with gusts of up to " + weather.wind.gust + "mph.", 30, 360);
