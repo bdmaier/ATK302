@@ -119,8 +119,8 @@ function draw() {
       textAlign(LEFT);
 
       textStyle(BOLD);
-      text("Temperature: ")
-      textStyle(NORMAL) 
+      text("Temperature: ");
+      textStyle(NORMAL); 
       text(+ weather.main.temp + "°F("+ sTemp.toFixed(2) + "°C)\n" + "High of: " + weather.main.temp_max + "°F(" + maxTemp.toFixed(2) + "°C)" + "  Low of: " + weather.main.temp_min + "°(" + minTemp.toFixed(2) + "°C)", 30, 250);
       text("FEELS like: " + weather.main.feels_like + "°F(" + feelsLike.toFixed(2) + "°C)", 30, 300);
       text("Humidity: " + weather.main.humidity + "%.", 30, 330);
