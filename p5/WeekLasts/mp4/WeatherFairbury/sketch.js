@@ -107,7 +107,7 @@ function draw() {
       var feelsLike = (celFeelsLike-32)/1.8;
       textStyle(BOLD);
       var textTemp = "Temperature: ";
-      textStyle(NORMAL);
+      textStyle(BOLD);
       fill('black');
       background('lightblue');
       textSize(38);
