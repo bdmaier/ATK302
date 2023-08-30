@@ -5,7 +5,7 @@ var oryx ;
 function setup() {
   // put setup code here
 createCanvas(800, 800);
-oryx = loadImage("assets/oryx.jpeg");
+oryx = loadImage("assets/oryx.jpg");
 //chicken2 = loadImage("assets/chicken2.jpg");
 //chicken3 = loadImage("assets/chicken3.jpg");
 }
