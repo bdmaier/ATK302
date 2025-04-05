@@ -137,7 +137,7 @@ function draw() {
       text("Pressure at ground level: " + grndLevPressure + "hPa", 30, 630);
       text("Cloudiness: " + cloudiness + "%", 30, 660);
       //text('link1', 30, 570);
-      text(formattedDate, 30, 670);
+      text(formattedDate, 30, 690);
       fill('white');
       noStroke();
       ellipse(x, 140, 100, 50);
