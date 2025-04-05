@@ -119,23 +119,24 @@ function draw() {
       text("How does the weather look today?!?", 350, 40);
       textSize(30);
       text("Weather in " + weather.name + ", " + weather.sys.country, 350, 80);
-      textSize(15);
+      textSize(17);
       textAlign(LEFT);
     
       //textStyle(BOLD);
-      text("Temperature: " + weather.main.temp + "°F("+ sTemp.toFixed(2) + "°C)\n" + "High of: " + weather.main.temp_max + "°F(" + maxTemp.toFixed(2) + "°C)" + "  Low of: " + weather.main.temp_min + "°(" + minTemp.toFixed(2) + "°C)", 30, 250);
-      text("FEELS like: " + weather.main.feels_like + "°F(" + feelsLike.toFixed(2) + "°C)", 30, 275);
-      text("Humidity: " + weather.main.humidity + "%.", 30, 300);
-      text("Wind speed: " + weather.wind.speed + "mph, with gusts of up to " + weather.wind.gust + "mph.", 30, 325);
-      text("Sunrise time: " + convertTime(srtime) + ".", 30, 375);
-      text("Sunset time: " + convertTime2(sstime) + ".", 30, 400);
-      text("Weather: " + weather.weather[0].description, 30, 425);
-      text("Pressure: " + press.toFixed(2) + "psi/" + pressmerc.toFixed(2) + "inHg/" + pressure + "mb/" + pressatm.toFixed(4) + "atm", 30, 450);
-      text("Visibility: " + visibility.toFixed(2) + "mi", 30, 475);
-      text("Coordinates of " + weather.name + ": " + weather.coord.lon + " W LONG, " + weather.coord.lat + " N LAT", 30, 500);
-      text("ID of " + weather.name + ": " + weather.sys.id, 30, 525);
-      text("Pressure at ground level: " + grndLevPressure + "hPa", 30, 550);
-      text("Cloudiness: " + cloudiness + "%", 30, 575);
+      text("Temperature: " + weather.main.temp + "°F("+ sTemp.toFixed(2) + "°C)", 30, 250);
+      text("High of: " + weather.main.temp_max + "°F(" + maxTemp.toFixed(2) + "°C)" + "  Low of: " + weather.main.temp_min + "°(" + minTemp.toFixed(2) + "°C)", 30, 275);
+      text("FEELS like: " + weather.main.feels_like + "°F(" + feelsLike.toFixed(2) + "°C)", 30, 300);
+      text("Humidity: " + weather.main.humidity + "%.", 30, 325);
+      text("Wind speed: " + weather.wind.speed + "mph, with gusts of up to " + weather.wind.gust + "mph.", 30, 350);
+      text("Sunrise time: " + convertTime(srtime) + ".", 30, 400);
+      text("Sunset time: " + convertTime2(sstime) + ".", 30, 425);
+      text("Weather: " + weather.weather[0].description, 30, 450);
+      text("Pressure: " + press.toFixed(2) + "psi/" + pressmerc.toFixed(2) + "inHg/" + pressure + "mb/" + pressatm.toFixed(4) + "atm", 30, 475);
+      text("Visibility: " + visibility.toFixed(2) + "mi", 30, 500);
+      text("Coordinates of " + weather.name + ": " + weather.coord.lon + " W LONG, " + weather.coord.lat + " N LAT", 30, 525);
+      text("ID of " + weather.name + ": " + weather.sys.id, 30, 550);
+      text("Pressure at ground level: " + grndLevPressure + "hPa", 30, 575);
+      text("Cloudiness: " + cloudiness + "%", 30, 600);
       //text('link1', 30, 570);
       text(formattedDate, 30, 690);
       fill('white');
@@ -146,31 +147,31 @@ function draw() {
       ellipse(x, 180, 100, 50);
       fill('black');
       if (winddir > 22.5 && winddir < 67.5) {
-        text("Wind From: NE", 30, 350);
+        text("Wind From: NE", 30, 375);
       } else
       if (winddir >= 0 && winddir <= 22.5) {
-        text("Wind From: N", 30, 350);
+        text("Wind From: N", 30, 375);
       } else
       if (winddir >= 67.5 && winddir <= 112.5) {
-        text("Wind From: E", 30, 350);
+        text("Wind From: E", 30, 375);
       } else
       if (winddir > 112.5 && winddir < 157.5) {
-        text("Wind From: SE", 30, 350);
+        text("Wind From: SE", 30, 375);
       } else
       if (winddir >= 157.5 && winddir <= 202.5) {
-        text("Wind From: S", 30, 350);
+        text("Wind From: S", 30, 375);
       } else
       if (winddir > 202.5 && winddir < 247.5) {
-        text("Wind From: SW", 30, 350);
+        text("Wind From: SW", 30, 375);
       } else
       if (winddir >= 247.5 && winddir <= 292.5) {
-        text("Wind From: W", 30, 350);
+        text("Wind From: W", 30, 375);
       } else
       if (winddir > 292.5 && winddir < 337.5) {
-        text("Wind From: NW", 30, 350);
+        text("Wind From: NW", 30, 375);
       } else
       if (winddir >= 337.5 && winddir <= 360) {
-        text("Wind From: N", 30, 350);
+        text("Wind From: N", 30, 375);
       }
 
       x = x + ws / 5;
