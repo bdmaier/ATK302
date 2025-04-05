@@ -42,6 +42,7 @@ function gotData(data) {
   celMaxTemp = weather.main.temp_max;
   celMinTemp = weather.main.temp_min;
   celFeelsLike= weather.main.feels_like;
+  grndLevPressure= weather.main.grnd_level;
   //weathdes = weather.weather.description;
 
 }
@@ -130,6 +131,7 @@ function draw() {
       text("Visibility: " + visibility.toFixed(2) + "mi", 30, 540);
       text("Coordinates of " + weather.name + ": " + weather.coord.lon + " W LONG, " + weather.coord.lat + " N LAT", 30, 570);
       text("ID of " + weather.name + ": " + weather.sys.id, 30, 600);
+      text("Pressure at ground level: " + grndLevPressure + "hPa", 30, 630);
       //text('link1', 30, 570);
       text(formattedDate, 30, 670);
       fill('white');
