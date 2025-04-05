@@ -11,6 +11,7 @@ var ctime;
 var pressure;
 var link1;
 var winddir;
+var grndLevPressure;
 
 function setup() {
   background('lightblue');
