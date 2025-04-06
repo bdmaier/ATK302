@@ -119,7 +119,7 @@ function draw() {
       text("How does the weather look today?!?", 350, 40);
       textSize(30);
       text("Weather in " + weather.name + ", " + weather.sys.country, 350, 80);
-      textSize(17);
+      textSize(20);
       textAlign(LEFT);
     
       //textStyle(BOLD);
