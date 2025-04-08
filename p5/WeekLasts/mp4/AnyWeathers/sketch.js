@@ -131,12 +131,12 @@ function draw() {
       text("Sunrise time: " + convertTime(srtime) + ".", 30, 400);
       text("Sunset time: " + convertTime2(sstime) + ".", 30, 425);
       text("Weather: " + weather.weather[0].description, 30, 450);
-      text("Pressure: " + press.toFixed(2) + "psi/" + pressmerc.toFixed(2) + "inHg/" + pressure + "mb/" + pressatm.toFixed(4) + "atm", 30, 475);
+      text("Pressure: " + press.toFixed(2) + "psi/" + pressmerc.toFixed(2) + "inHg/" + pressure + "mb/" + pressatm.toFixed(4) + "atm", 30, 575);
       text("Visibility: " + visibility.toFixed(2) + "mi", 30, 500);
       text("Coordinates of " + weather.name + ": " + weather.coord.lon + " W LONG, " + weather.coord.lat + " N LAT", 30, 525);
-      text("ID of " + weather.name + ": " + weather.sys.id, 30, 550);
-      text("Pressure at ground level: " + grndLevPressure + "hPa", 30, 575);
-      text("Cloudiness: " + cloudiness + "%", 30, 600);
+      text("ID of " + weather.name + ": " + weather.sys.id, 30, 600);
+      text("Pressure at ground level: " + grndLevPressure + "hPa", 30, 475);
+      text("Cloudiness: " + cloudiness + "%", 30, 550);
       //text('link1', 30, 570);
       text(formattedDate, 30, 690);
       fill('white');
