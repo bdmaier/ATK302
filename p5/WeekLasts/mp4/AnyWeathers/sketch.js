@@ -139,7 +139,7 @@ function draw() {
       text("Visibility: " + visibility.toFixed(2) + "mi", 30, 550);
       text("Coordinates of " + weather.name + ": " + weather.coord.lon + " W LONG, " + weather.coord.lat + " N LAT", 30, 575);
       text("ID of " + weather.name + ": " + weather.sys.id, 30, 600);
-      text("Pressure at ground level: " + pressGrnd.toFixed(2) + "psi/" + pressGrndMerc.toFixed(2) + "inHg/" + grndLevPressure + "mb (hPa)/" + pressGrndAtm.toFixed(4) + "atm", 30, 500);
+      text("Pressure (Grnd Lvl): " + pressGrnd.toFixed(2) + "psi/" + pressGrndMerc.toFixed(2) + "inHg/" + grndLevPressure + "mb (hPa)/" + pressGrndAtm.toFixed(4) + "atm", 30, 500);
       text("Cloudiness: " + cloudiness + "%", 30, 525);
       //text('link1', 30, 570);
       text(formattedDate, 30, 690);
